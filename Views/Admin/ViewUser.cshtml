@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Simple Sidebar - Start Bootstrap Template</title>
+    <title>Online Diary</title>
     <!-- Bootstrap Core CSS -->
     <link href="~/Content/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
@@ -34,8 +34,8 @@
                 <li class="sidebar-default">
                     <a href="#">
 
-                        <img src="Images/admin.png" width="120" style="right" height="120" />
-                        Admin
+                        <img src="/Files/@Session["image1"]" height="50" width="50" />
+                        @Session["name"]
                     </a>
                 </li>
 
@@ -106,13 +106,13 @@
                                                                 <div class="panel-heading">
                                                                     <label for="username" class="col-md-3 control-label">Image</label><br />
 
-                                                                    <div class="col-md-9">
+                                                                    <div class="col-md-8">
                                                                         <img src="/Files/@i.Image" width="50" height="50" />
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="username" class="col-md-3 control-label">Name</label><br />
-                                                                    <div class="col-md-9">
+                                                                    <div class="col-md-8">
                                                                         @i.Name
                                                                     </div>
                                                                 </div>
@@ -124,7 +124,7 @@
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="username" class="col-md-3 control-label">Id</label><br />
-                                                                    <div class="col-md-9">
+                                                                    <div class="col-md-8">
                                                                       @i.Id
                                                                     </div>
                                                                 </div>
