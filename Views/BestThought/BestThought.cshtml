@@ -111,7 +111,13 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                @foreach (BestThought s in ViewBag.Note)
+@{
+    MyDataEntities de = new MyDataEntities();
+
+    int i = (int)Session["id"];
+    }
+
+                                                @foreach (BestThought s in de.BestThoughts.ToList())
                                                 {
                                                     <div class="panel-heading">
                                                         <div class="panel-body">
@@ -145,11 +151,7 @@
                                                                         </div>
                                                                     </div>
                                                                     <br />
-                                                                    @{
-                                                                   MyDataEntities de = new MyDataEntities();
-
-                                                                      int i = (int)Session["id"];
-                                                                      
+                                                                   
                                                                     }
                                                                     
                                                                     <div class="form-group">
