@@ -107,7 +107,7 @@
 
                                         <div class="form-group">
 
-                                            @foreach (UserDiary u in Model)
+                                            @foreach (UserDiary u in ee.UserDiaries.ToList())
                                             {
 
                                                 int i = (int)Session["id"];
