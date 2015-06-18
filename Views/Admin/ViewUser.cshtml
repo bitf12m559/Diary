@@ -94,11 +94,14 @@
 
                                                     </div>
 
-
+@{
+    
+    MyDataEntities ed = new MyDataEntities();
+}
 
                                                     <div class="form-group">
 
-                                                        @foreach ( UserAccount i in ViewBag.m)
+                                                        @foreach ( UserAccount i in ed.UserAccounts.ToList())
                                                         {
 
                                                             <div class="form-group">
