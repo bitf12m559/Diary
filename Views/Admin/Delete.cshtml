@@ -23,32 +23,58 @@
 
 
 <body>
-    @if (Session["isAdmin"] != null)
-    {
-        <a href="/Admin/LogoutA" style="left:20px;color:lightskyblue">Logout</a>
-    }
-    <br /><br />
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-default">
+                    <a href="#">
 
-    <img src="~/Images/logo.png" width="400" height="74" />
-    <br />
+                        <img src="/Files/@Session["image1"]" height="50" width="50" />
+                        @Session["name"]
+                    </a>
+                </li>
+
+                <li>
+
+                    <a href="/Admin/Add" style="left:20px;color:lightskyblue">Add Users</a>
+                </li>
+                <li>
+                    <a href="/Admin/ViewUser" style="left:20px;color:lightskyblue">View User</a>
+                </li>
+                <li>
+                    <a href="/Admin/Delete" style="left:20px;color:lightskyblue">Delete Users</a>
+                </li>
+                <li>
+                    <a href="/Admin/Search" style="left:20px;color:lightskyblue">Search user</a>
+                </li>
+                <li>
+                    <a href="/Admin/LogoutA" style="left:20px;color:lightskyblue">Logout</a>
+                </li>
+
+            </ul>
+        </div>
 
 
-    @*<h2>Delete User Diary then Delete User</h2>
-    <button><a href="~/Admin/ViewAllNote" style="left:20px;color:orange; font-size:large">Click to Delete User Diary</a></button>
-    <br />*@
+        <img src="~/Images/logo.png" width="400" height="74" />
+        <br />
 
-    @using (Html.BeginForm("Deletem", "Admin", FormMethod.Post,new{@class="container text-center"}))
 
+        @*<h2>Delete User Diary then Delete User</h2>
+            <button><a href="~/Admin/ViewAllNote" style="left:20px;color:orange; font-size:large">Click to Delete User Diary</a></button>
+            <br />*@
+
+        @using (Html.BeginForm("Deletem", "Admin", FormMethod.Post, new { @class = "container text-center" }))
         {
 
-        @Html.LabelFor(m =>m.Id)
-        @Html.TextBoxFor(m => m.Id, new { required = "required" })
+            @Html.LabelFor(m => m.Id)
+            @Html.TextBoxFor(m => m.Id, new { required = "required" })
 
 
 
-        <input type="submit" value="Delete" />
+            <input type="submit" value="Delete" />
         }
-    
+
 
 </body>
 </html>
