@@ -105,8 +105,21 @@
                                             <div class="panel-title">Register</div>
 
                                         </div>
-
+                                        
                                         <div class="panel-body">
+                                            <form action="/Account/UploadImage" method="post" enctype="multipart/form-data">
+                                                <div class="form-group" style="margin-bottom:60px">
+                                                    <div class="col-md-9">
+                                                        @Html.LabelFor(m => m.Image, new { @class = "control-label" })
+                                                        @Html.TextBoxFor(m => m.Image, new { type = "file" ,required="required" })
+                                                        <input type="submit" value="Upload" class="btn-info pull-left" />
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        
+                                                    </div>
+                                                    <br />
+                                                </div>
+                                            </form>
                                                 <form id="signupform" action="/Account/Register2" method="post" class="form-horizontal" role="form">
                                                     <div class="form-group">
                                                         <div id="checking">Checking...</div>
@@ -168,26 +181,17 @@
                                                     @Html.TextBoxFor(m => m.Email, new {  @class = "form-control" })
                                                     @Html.ValidationMessageFor(model => model.Email)
                                                 </div>
+                                                <input type="submit" value="Register" class="btn-primary pull-right" style="margin-top:30px;margin-right:40px"/>
                                             </div>
                                             <br /> <br />
-                                            <div class="form-group">
-                                                @Html.LabelFor(m => m.Image, new { @class = "col-md-3 control-label" })
-
-                                                <div class="col-md-9">
-                                                    @Html.TextBoxFor(m => m.Image, new { type = "file" })
-                                                    <br />
-
-                                                    <input type="submit" value="Register" />
-                                                    
-                                                </div>
-                                              
-                                            </div>
+                                           
                                                     <p class="change_link">
                                                         Already a member ?
                                                         <a href="/Account/Login" class="to_register">Login Now</a>
                                                     </p>
                                             <br /> <br />
                                                     </form>
+                                  
                                             </div>
                                     
                                             @*<input type="submit" value="Register" />*@
