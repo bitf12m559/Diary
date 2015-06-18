@@ -9,43 +9,81 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>SearchU</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="~/Content/simple-sidebar.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
 <body>
-  <li >
-      <a href="/Admin/LogoutA" style="left:20px;color:lightskyblue">Logout</a>
-      </li>
-    <br />
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-default">
+                    <a href="#">
 
+                        <img src="/Files/@Session["image1"]" height="50" width="50" />
+                        @Session["name"]
+                    </a>
+                </li>
 
-    <h2> Search Data is below</h2>
-    <div>
-        
+                <li>
 
-        <button><a href="~/Admin/Search" style="left:20px; font-size:large;color:orange">Go Back</a></button>
-        <br />
-        <br />
-        <div>
-          
-            <table border="1">
+                    <a href="/Admin/Add" style="left:20px;color:lightskyblue">Add Users</a>
+                </li>
+                <li>
+                    <a href="/Admin/ViewUser" style="left:20px;color:lightskyblue">View User</a>
+                </li>
+                <li>
+                    <a href="/Admin/Delete" style="left:20px;color:lightskyblue">Delete Users</a>
+                </li>
+                <li>
+                    <a href="/Admin/Search" style="left:20px;color:lightskyblue">Search user</a>
+                </li>
+                <li>
+                    <a href="/Admin/LogoutA" style="left:20px;color:lightskyblue">Logout</a>
+                </li>
 
-                <tr>
-                    <td>Id</td>
-                    <td>Name</td>
-                    <td>Password</td>
-                    <td>Type</td>
-                    <td>Image</td>
-                </tr>
-                <tr>
-
-                    <td> @Model.Id</td>
-                    <td> @Model.Name</td>
-                    <td>@Model.Password</td>
-                    <td>@Model.Type</td>
-                    <td>@Model.Image</td>
-                </tr>
-            </table>
+            </ul>
         </div>
 
-    </div>
+
+        <h2> Search Data is below</h2>
+        <div>
+
+
+            <button><a href="~/Admin/Search" style="left:20px; font-size:large;color:orange">Go Back</a></button>
+            <br />
+            <br />
+            <div>
+
+                <table border="1">
+
+                    <tr>
+                        <td>Id</td>
+                        <td>Name</td>
+                        <td>Password</td>
+                        <td>Type</td>
+                        <td>Image</td>
+                    </tr>
+                    <tr>
+
+                        <td> @Model.Id</td>
+                        <td> @Model.Name</td>
+                        <td>@Model.Password</td>
+                        <td>@Model.Type</td>
+                        <td>@Model.Image</td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+        </div>
 </body>
 </html>

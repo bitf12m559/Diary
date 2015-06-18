@@ -25,97 +25,123 @@
     <link rel="stylesheet" href="~/Content/css/creative.css" type="text/css">
 </head>
 <body>
-    @if (Session["islogin"] != null)
-    {
-        <a href="~/UserDiary/Logout" style="left:20px;color:white; font-size:medium">Log Out</a>
 
-    }
-    else
-    {
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-default">
+                    <a href="#">
 
-    }
-         @*<h1> hii User Search Result is below</h1>
-    <img src="~/Images/hand.jpg" width="275" height="183" /><br />
-    <br />
-  <button><a href="~/UserDiary/DeleteNote" style="left:20px;color:orange; font-size:large">Go Back</a></button>
-    <br />
-    <br />
-   <div>
-       Title    Note
-        <table border="1">
-           
-          <tr> 
-              
-            <td> @Model.Title</td>
-              
-          <td> @Model.Note</td>
-              </tr>
-        </table>
-     </div>*@
+                        <img src="/Files/@Session["image"]" height="50" width="50" />
+                        @Session["uname"]
+                    </a>
+                </li>
 
-    <section class="container">
-    @*<img src="~/Images/login.jpg" style="left:" />*@
-    @*<h3 style="font-weight:700">LOGIN</h3>*@
+                <li>
+                    <a href="/Home/Index" style="left:20px;color:white">Home</a>
+                </li>
+                <li>
+                    <a href="/UserDiary/AddNote" style="left:20px;color:white">Add Note</a>
+                </li>
+                <li>
+                    <a href="/UserDiary/DeleteNote" style="left:20px;color:white">Delete Note</a>
+                </li>
 
-    <div class="row" style="padding-top:10px">
-        <div class="col-md-3">
-            <div class="list-group" style="min-height:750px; max-width:300px">
-                @*<label class="list-group-item active"></label>*@
-                @*<a class="list-group-item" href="#"></a>*@
-            </div>
+                <li>
+                    <a href="/UserDiary/SearchNote" style="left:20px;color:white">Search Note</a>
+                </li>
+                <li>
+                    <a href="/UserDiary/ViewAllNote" style="left:20px;color:white">View All Note</a>
+                </li>
+
+                <li>
+                    <a href="/BestThought/BestThought" style="left:20px;color:white">BestThought</a>
+                </li>
+                <li>
+                    <a href="/UserDiary/ImageView" style="left:20px;color:white">Image View</a>
+                </li>
+                <li>
+                    <a href="/UserDiary/ViewUser" style="left:20px;color:white"> Update Profile</a>
+                </li>
+                <li>
+                    <a href="/BestThought/BestAdd" style="left:20px;color:white">Add Best Thought</a>
+                </li>
+                <li>
+                    <a href="/UserDiary/BestImage" style="left:20px;color:white">Add Best Image</a>
+                </li>
+                <li>
+                    <a href="/UserDiary/Logout" style="left:20px;color:white">Log Out</a>
+                </li>
+                <li>
+            </ul>
         </div>
 
-        <div class="col-md-6 pull-left">
-            <section>
-                <div class="container">
-                    <div class="centre">
-                        <h2>Search Results</h2>
+
+        <section class="container">
+            @*<img src="~/Images/login.jpg" style="left:" />*@
+            @*<h3 style="font-weight:700">LOGIN</h3>*@
+
+            <div class="row" style="padding-top:10px">
+                <div class="col-md-3">
+                    <div class="list-group" style="min-height:750px; max-width:300px">
+                        @*<label class="list-group-item active"></label>*@
+                        @*<a class="list-group-item" href="#"></a>*@
                     </div>
+                </div>
 
-                    <div class="col-md-6 pull-left">
-                        <div id="signupbox">
-                            <div class="panel panel-danger">
-                                <div class="panel-heading">
-                                    <div class="panel-title"> Search Results</div>
+                <div class="col-md-6 pull-left">
+                    <section>
+                        <div class="container">
+                            <div class="centre">
+                                <h2>Search Results</h2>
+                            </div>
 
-                                </div>
+                            <div class="col-md-6 pull-left">
+                                <div id="signupbox">
+                                    <div class="panel panel-danger">
+                                        <div class="panel-heading">
+                                            <div class="panel-title"> Search Results</div>
 
-                                <div class="panel-body">
-
-                                    <div class="form-group">
-
-                                            <div class="form-group">
-                                                <label for="username" class="col-md-3 control-label">Title</label><br />
-
-                                                <div class="col-md-9">
-                                                    @Model.Title
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="username" class="col-md-3 control-label">Note</label><br />
-                                                <div class="col-md-9">
-                                                    @Model.Note
-                                                </div>
-                                            </div>
-
-                                        <div class="form-group">
-                                            <label for="username" class="col-md-3 control-label">Dtae Time</label><br />
-                                            <div class="col-md-9">
-                                                @Model.DateTime
-                                            </div>
                                         </div>
 
-                                    </div>
+                                        <div class="panel-body">
 
+                                            <div class="form-group">
+
+                                                <div class="form-group">
+                                                    <label for="username" class="col-md-3 control-label">Title</label><br />
+
+                                                    <div class="col-md-9">
+                                                        @Model.Title
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="username" class="col-md-3 control-label">Note</label><br />
+                                                    <div class="col-md-9">
+                                                        @Model.Note
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="username" class="col-md-3 control-label">Dtae Time</label><br />
+                                                    <div class="col-md-9">
+                                                        @Model.DateTime
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </section>
                 </div>
+                
+            </div>
             </section>
-        </div>
-
-    </div>
-
+    
 </body>
 </html>
