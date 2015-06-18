@@ -94,7 +94,9 @@
                                         <div class="centre">
                                             <h2>List of  Best Thoughts Of Users</h2>
                                         </div>
-
+                                        @{
+                                            MyDataEntities de = new MyDataEntities();
+                                        }
                                         <div class="col-md-6 pull-left">
                                             <div id="signupbox">
                                                 <div class="panel panel-danger">
@@ -108,7 +110,7 @@
 
                                                                 <div class="form-group">
 
-                                                                    @foreach (var s in Model)
+                                                                    @foreach (var s in de.BestThoughts.ToList())
                                                                     {
                                                                         <div class="form-group">
                                                                             <label for="username" class="col-md-3 control-label">Title</label><br />

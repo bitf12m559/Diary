@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Simple Sidebar - Start Bootstrap Template</title>
+    <title>Online Diary</title>
     <!-- Bootstrap Core CSS -->
     <link href="~/Content/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
@@ -85,8 +85,11 @@
             <div class="wrapper">
                 <ul class="properties_list">
                     <li>
+                        @{
+                            MyDataEntities de = new MyDataEntities();
+                        }
 
-                        @foreach (BestImage v in ViewBag.imgs)
+                        @foreach (BestImage v in de.BestImages.ToList())
                         {
 
                         <li>
@@ -94,9 +97,7 @@
                                 <br />
                                 <img src="~/Files/@v.Image" width="300" height="150" alt="" title="" class="property_img" />
                               
-                                @{
-                            MyDataEntities de = new MyDataEntities();
-                                }
+                            
 
                                 <div class="property_details">
                                     <div class="form-group">

@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Simple Sidebar - Start Bootstrap Template</title>
+    <title>Online Diary</title>
     <!-- Bootstrap Core CSS -->
     <link href="~/Content/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
@@ -114,7 +114,7 @@
 
                                                         <div class="form-group">
 
-                                                            @foreach (UserAccount i in ViewBag.m)
+                                                            @foreach (UserAccount i in ee.UserAccounts.ToList())
                                                             {
                                                                 int j = (int)Session["id"];
                                                                 if (i.Id == j)
